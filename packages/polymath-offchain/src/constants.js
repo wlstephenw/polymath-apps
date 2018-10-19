@@ -1,6 +1,6 @@
 // @flow
 
-import { normalizeURL } from '@polymathnetwork/shared/utils';
+import { normalizeURL } from './common/utils';
 
 export const cleanEnvironment = <T: { [string]: string }>(
   env: any = process.env,

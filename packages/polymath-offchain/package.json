@@ -6,7 +6,7 @@
     "node": ">=8.9"
   },
   "scripts": {
-    "start": "babel-node src/server.js",
+    "start": "babel src --out-dir build && node ./build/server.js",
     "test": "jest",
     "start:dist": "node ./build/server.js",
     "build": "babel src --out-dir build",
