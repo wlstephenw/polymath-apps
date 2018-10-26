@@ -42,11 +42,10 @@ export const etherscanToken = (address: string, label?: Node) => {
 };
 
 export const thousandsDelimiter = (v: number) => {
-  let [i, f] = v.toString(10).split('.');
-  return (
-    i.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ',') +
-    (f ? '.' + f : '')
-  );
+  return v
+    .toString()
+    .replace(/[^0-9.]/g, '')
+    .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 };
 
 export const addressShortifier = (address: string) =>

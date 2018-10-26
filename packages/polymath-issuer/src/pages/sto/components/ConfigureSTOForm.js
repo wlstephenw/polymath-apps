@@ -50,14 +50,14 @@ class ConfigureSTOForm extends Component<Props, State> {
   };
 
   handleCapChange = (event: Object, newValue: string) => {
-    this.setState({ cap: Number(newValue.replace(/,/g, '')) });
+    this.setState({ cap: Number(newValue.replace(/,./g, '')) });
     this.updateAmountOfFunds(
       Number(newValue.replace(/,/g, '')) / this.state.rate
     );
   };
 
   handleRateChange = (event: Object, newValue: string) => {
-    this.setState({ rate: Number(newValue.replace(/,/g, '')) });
+    this.setState({ rate: Number(newValue.replace(/,./g, '')) });
     this.updateAmountOfFunds(
       this.state.cap / Number(newValue.replace(/,/g, ''))
     );
